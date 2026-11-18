@@ -9,22 +9,16 @@ install it as a **hosted app** and show the UI in a Desktop iframe.
 | **ACowork package repo** | [acowork/figcraft-app](https://github.com/acowork/figcraft-app) |
 | **Upstream** | [storytold/figcraft](https://github.com/storytold/figcraft) |
 | **License** | MIT OR Apache-2.0 |
+| **Package** | [v0.18.1-acowork](https://github.com/acowork/figcraft-app/releases/tag/v0.18.1-acowork) (windows-x86_64) |
 
 ## Status
 
-Packaging for ACowork (ADR-116 `.app` + loopback HTTP `/ui/`) is in progress on
-the fork. Until a Release publishes `package.url` + `sha256` in this gallery
-entry, Desktop will show this README and a link to the repository instead of
-an Install button that downloads a package.
+A thin ACowork host (`figcraft-acowork`) is packaged for Windows. It serves
+`/health` + `/ui/` for the Gateway supervisor. The current Release ships a
+**placeholder UI**; the full Trunk `figcraft-web` surface is not bundled yet.
 
-## What changes on the fork
-
-Upstream FigCraft ships native egui windows and an optional `figcraft-web`
-static build. The ACowork adaptation needs:
-
-1. A supervised process that serves the web UI (or equivalent) on loopback
-2. `app.toml` + signed `.app` per platform
-3. Health endpoint for the Gateway supervisor
+Install requires a Gateway that accepts this package (unsigned packages need
+`apps.allow_unsigned = true` or `dev_mode` until a signed Release is published).
 
 ## Privacy
 

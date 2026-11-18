@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-18T09:33:04Z",
+  "generated_at": "2026-11-18T11:29:40Z",
   "source": {
     "repository": "https://github.com/acowork/ACoworkAppGallery",
-    "commit": "fe3009afb873c8cc496c6ba3f8bb086dfc6f09d6"
+    "commit": "434b0da43baf105fcd567045db7684e73b3d070a"
   },
   "apps": [
     {
@@ -24,9 +24,16 @@
         "productivity"
       ],
       "icon": "https://gallery.acowork.ai/apps/acowork/figcraft/assets/icon.png",
-      "latest_version": "0.14.0",
-      "package": null,
-      "readme_md": "# FigCraft (ACowork)\n\nOpen-source interface design and prototyping — frames, auto layout, components,\nvariants, vectors, styles, variables and prototypes — adapted so ACowork can\ninstall it as a **hosted app** and show the UI in a Desktop iframe.\n\n| | |\n|---|---|\n| **ACowork package repo** | [acowork/figcraft-app](https://github.com/acowork/figcraft-app) |\n| **Upstream** | [storytold/figcraft](https://github.com/storytold/figcraft) |\n| **License** | MIT OR Apache-2.0 |\n\n## Status\n\nPackaging for ACowork (ADR-116 `.app` + loopback HTTP `/ui/`) is in progress on\nthe fork. Until a Release publishes `package.url` + `sha256` in this gallery\nentry, Desktop will show this README and a link to the repository instead of\nan Install button that downloads a package.\n\n## What changes on the fork\n\nUpstream FigCraft ships native egui windows and an optional `figcraft-web`\nstatic build. The ACowork adaptation needs:\n\n1. A supervised process that serves the web UI (or equivalent) on loopback\n2. `app.toml` + signed `.app` per platform\n3. Health endpoint for the Gateway supervisor\n\n## Privacy\n\nYour design files stay on disk; nothing is sent unless you share a file. See\nupstream docs for sharing behaviour.\n",
+      "latest_version": "0.18.1",
+      "package": {
+        "url": "https://github.com/acowork/figcraft-app/releases/download/v0.18.1-acowork/figcraft-0.18.1-windows-x86_64.app.zip",
+        "sha256": "a26bb24c86286dfaeea96f9ccfde0e004ad492d2a47a4d7e22848b017f07dcdf",
+        "size_bytes": 2178093,
+        "platforms": [
+          "windows-x86_64"
+        ]
+      },
+      "readme_md": "# FigCraft (ACowork)\n\nOpen-source interface design and prototyping — frames, auto layout, components,\nvariants, vectors, styles, variables and prototypes — adapted so ACowork can\ninstall it as a **hosted app** and show the UI in a Desktop iframe.\n\n| | |\n|---|---|\n| **ACowork package repo** | [acowork/figcraft-app](https://github.com/acowork/figcraft-app) |\n| **Upstream** | [storytold/figcraft](https://github.com/storytold/figcraft) |\n| **License** | MIT OR Apache-2.0 |\n| **Package** | [v0.18.1-acowork](https://github.com/acowork/figcraft-app/releases/tag/v0.18.1-acowork) (windows-x86_64) |\n\n## Status\n\nA thin ACowork host (`figcraft-acowork`) is packaged for Windows. It serves\n`/health` + `/ui/` for the Gateway supervisor. The current Release ships a\n**placeholder UI**; the full Trunk `figcraft-web` surface is not bundled yet.\n\nInstall requires a Gateway that accepts this package (unsigned packages need\n`apps.allow_unsigned = true` or `dev_mode` until a signed Release is published).\n\n## Privacy\n\nYour design files stay on disk; nothing is sent unless you share a file. See\nupstream docs for sharing behaviour.\n",
       "source_path": "apps/acowork/figcraft"
     }
   ]

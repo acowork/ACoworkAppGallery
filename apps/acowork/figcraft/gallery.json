@@ -13,6 +13,11 @@
   "upstream": "https://github.com/storytold/figcraft",
   "categories": ["design", "productivity"],
   "icon": "assets/icon.png",
-  "latest_version": "0.14.0",
-  "package": null
+  "latest_version": "0.18.1",
+  "package": {
+    "url": "https://github.com/acowork/figcraft-app/releases/download/v0.18.1-acowork/figcraft-0.18.1-windows-x86_64.app.zip",
+    "sha256": "a26bb24c86286dfaeea96f9ccfde0e004ad492d2a47a4d7e22848b017f07dcdf",
+    "size_bytes": 2178093,
+    "platforms": ["windows-x86_64"]
+  }
 }
