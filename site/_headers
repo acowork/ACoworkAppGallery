@@ -1,0 +1,27 @@
+# Cloudflare Pages headers
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+/*
+  X-Content-Type-Options: nosniff
+  Access-Control-Allow-Origin: *
+
+/
+  Cache-Control: no-cache
+
+/index.html
+  Cache-Control: no-cache
+
+/gallery.js
+  Cache-Control: no-cache
+
+/styles.css
+  Cache-Control: no-cache
+
+/data/index.json
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: no-cache
+  Access-Control-Allow-Origin: *
+
+/apps/*
+  Cache-Control: public, max-age=0, must-revalidate
+  Access-Control-Allow-Origin: *

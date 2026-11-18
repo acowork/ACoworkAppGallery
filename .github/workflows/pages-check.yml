@@ -1,0 +1,25 @@
+name: pages-check
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate + build site catalog
+        run: |
+          python tools/validate.py
+          python tools/build-index.py
+      - name: Require site artifacts
+        run: |
+          test -f site/index.html
+          test -f site/data/index.json
+          test -f site/CNAME
+          grep -q 'gallery.acowork.ai' site/CNAME

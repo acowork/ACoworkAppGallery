@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0d0e10" />
+  <title>App Gallery — ACowork</title>
+  <meta name="description" content="Hosted apps for ACowork — browse the registry, read each README, install from the Desktop Apps panel." />
+  <meta property="og:title" content="ACowork App Gallery" />
+  <meta property="og:description" content="The hosted-app registry for ACowork Desktop." />
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav__row">
+      <a class="nav__brand" href="https://acowork.ai" aria-label="ACowork home">
+        <img src="assets/logo.svg" alt="" width="28" height="28" />
+        <span class="nav__name">ACowork</span>
+        <span class="nav__tag">App Gallery</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="https://acowork.ai">Home</a>
+        <a href="https://hub.acowork.ai">Agent Hub</a>
+        <a href="https://github.com/acowork/ACoworkAppGallery" target="_blank" rel="noopener">Repository</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>App Gallery</h1>
+      <p class="lead">
+        Hosted applications for ACowork Desktop. Browse cards here; install and
+        open them in the <strong>Apps</strong> panel. Packages live in each
+        app’s own Releases — this site only registers metadata and READMEs.
+      </p>
+      <p class="meta"><strong id="count">—</strong> apps registered</p>
+    </section>
+
+    <div class="layout">
+      <aside class="list-pane" aria-label="Apps">
+        <label class="search">
+          <span class="sr-only">Search apps</span>
+          <input id="q" type="search" placeholder="Search apps…" autocomplete="off" />
+        </label>
+        <div id="cards" class="cards" role="listbox" aria-label="App list"></div>
+        <p id="empty" class="empty" hidden>No matching apps.</p>
+      </aside>
+      <section class="detail-pane" aria-live="polite">
+        <div id="detail-empty" class="detail-empty">Select an app to read its README.</div>
+        <article id="detail" hidden>
+          <header class="detail-head">
+            <img id="d-icon" class="detail-icon" alt="" width="56" height="56" hidden />
+            <div class="detail-titles">
+              <h2 id="d-name"></h2>
+              <p id="d-sub" class="detail-sub"></p>
+            </div>
+          </header>
+          <p id="d-summary" class="detail-summary"></p>
+          <div class="detail-actions">
+            <a id="d-repo" class="btn" target="_blank" rel="noopener">Repository</a>
+            <a id="d-home" class="btn btn--ghost" target="_blank" rel="noopener" hidden>Homepage</a>
+            <span id="d-pkg" class="pill" hidden></span>
+          </div>
+          <div id="d-readme" class="readme prose"></div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <footer class="wrap foot">
+    <a href="https://acowork.ai">acowork.ai</a>
+    ·
+    <a href="https://hub.acowork.ai">Agent Hub</a>
+    ·
+    <a href="data/index.json">index.json</a>
+  </footer>
+
+  <script src="gallery.js" type="module"></script>
+</body>
+</html>

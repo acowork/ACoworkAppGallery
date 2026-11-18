@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Build dist/index.json from apps/*/gallery.json (embeds README markdown)."""
+"""Build catalog JSON and sync assets into site/ for Cloudflare Pages."""
 
 from __future__ import annotations
 
 import json
+import shutil
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -11,8 +12,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 APPS = ROOT / "apps"
-OUT = ROOT / "dist" / "index.json"
-DEFAULT_BASE = "https://raw.githubusercontent.com/acowork/ACoworkAppGallery/main"
+DIST_OUT = ROOT / "dist" / "index.json"
+SITE = ROOT / "site"
+SITE_DATA = SITE / "data" / "index.json"
+# Public origin after Cloudflare Pages custom domain is attached.
+DEFAULT_BASE = "https://gallery.acowork.ai"
 
 
 def git_commit() -> str | None:
@@ -31,16 +35,25 @@ def git_commit() -> str | None:
         return None
 
 
-def resolve_icon(entry_dir: Path, icon: str | None, source_path: str) -> str | None:
+def sync_icon(entry_dir: Path, icon: str | None, source_path: str) -> str | None:
     if not icon:
         return None
     if icon.startswith(("http://", "https://")):
         return icon
+    src = entry_dir / icon
+    if not src.is_file():
+        return None
+    dest = SITE / source_path / icon
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(src, dest)
     rel = f"{source_path}/{icon}".replace("\\", "/")
     return f"{DEFAULT_BASE}/{rel}"
 
 
 def main() -> int:
+    SITE.mkdir(parents=True, exist_ok=True)
+    (SITE / "data").mkdir(parents=True, exist_ok=True)
+
     apps: list[dict] = []
     for path in sorted(APPS.glob("*/*/gallery.json")):
         if "_template" in path.parts:
@@ -62,7 +75,7 @@ def main() -> int:
                 "homepage": data.get("homepage"),
                 "upstream": data.get("upstream"),
                 "categories": data.get("categories") or [],
-                "icon": resolve_icon(path.parent, data.get("icon"), source_path),
+                "icon": sync_icon(path.parent, data.get("icon"), source_path),
                 "latest_version": data.get("latest_version"),
                 "package": data.get("package"),
                 "readme_md": readme_md,
@@ -79,9 +92,12 @@ def main() -> int:
         },
         "apps": apps,
     }
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"wrote {OUT.relative_to(ROOT)} ({len(apps)} apps)")
+    text = json.dumps(index, ensure_ascii=False, indent=2) + "\n"
+    DIST_OUT.parent.mkdir(parents=True, exist_ok=True)
+    DIST_OUT.write_text(text, encoding="utf-8")
+    SITE_DATA.write_text(text, encoding="utf-8")
+    print(f"wrote {DIST_OUT.relative_to(ROOT)}")
+    print(f"wrote {SITE_DATA.relative_to(ROOT)} ({len(apps)} apps)")
     return 0
 
 
