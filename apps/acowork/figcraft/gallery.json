@@ -1,0 +1,18 @@
+{
+  "id": "figcraft",
+  "name": "FigCraft",
+  "summary": "Interface design and prototyping in pure Rust — ACowork hosted adaptation of FigCraft for iframe install.",
+  "publisher": {
+    "id": "acowork",
+    "display_name": "ACowork",
+    "homepage": "https://acowork.ai"
+  },
+  "license": "MIT OR Apache-2.0",
+  "repository": "https://github.com/acowork/figcraft-app",
+  "homepage": "https://getartcraft.com/apps/figcraft",
+  "upstream": "https://github.com/storytold/figcraft",
+  "categories": ["design", "productivity"],
+  "icon": "assets/icon.png",
+  "latest_version": "0.14.0",
+  "package": null
+}

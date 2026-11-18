@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://acowork.ai/schemas/app-gallery/index.schema.json",
+  "title": "ACowork App Gallery index",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "apps"],
+  "properties": {
+    "schema_version": { "type": "integer", "const": 1 },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "repository": { "type": "string" },
+        "commit": { "type": "string" }
+      }
+    },
+    "apps": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/app" }
+    }
+  },
+  "$defs": {
+    "app": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "summary",
+        "publisher",
+        "license",
+        "repository",
+        "source_path"
+      ],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "summary": { "type": "string" },
+        "publisher": { "type": "object" },
+        "license": { "type": "string" },
+        "repository": { "type": "string" },
+        "homepage": { "type": ["string", "null"] },
+        "upstream": { "type": ["string", "null"] },
+        "categories": { "type": "array", "items": { "type": "string" } },
+        "icon": { "type": ["string", "null"] },
+        "latest_version": { "type": ["string", "null"] },
+        "package": { "type": ["object", "null"] },
+        "readme_md": { "type": "string" },
+        "source_path": { "type": "string" }
+      }
+    }
+  }
+}

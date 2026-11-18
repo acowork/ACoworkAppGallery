@@ -1,0 +1,18 @@
+{
+  "id": "my-app",
+  "name": "My App",
+  "summary": "One-line description shown on the gallery card.",
+  "publisher": {
+    "id": "your-handle",
+    "display_name": "Your Name",
+    "homepage": "https://github.com/your-handle"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/your-handle/your-app",
+  "homepage": null,
+  "upstream": null,
+  "categories": ["productivity"],
+  "icon": "assets/icon.png",
+  "latest_version": "0.1.0",
+  "package": null
+}

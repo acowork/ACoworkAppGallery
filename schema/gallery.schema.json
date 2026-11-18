@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://acowork.ai/schemas/app-gallery/gallery.schema.json",
+  "title": "ACowork App Gallery entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "summary", "publisher", "license", "repository"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{1,63}$",
+      "description": "Stable app id (must match AppManifest.id when a .app is published)."
+    },
+    "name": { "type": "string", "minLength": 1, "maxLength": 80 },
+    "summary": { "type": "string", "minLength": 1, "maxLength": 280 },
+    "publisher": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "display_name"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "display_name": { "type": "string", "minLength": 1 },
+        "homepage": { "type": ["string", "null"], "format": "uri" }
+      }
+    },
+    "license": { "type": "string", "minLength": 1 },
+    "repository": { "type": "string", "format": "uri" },
+    "homepage": { "type": ["string", "null"], "format": "uri" },
+    "upstream": {
+      "type": ["string", "null"],
+      "format": "uri",
+      "description": "Optional upstream project when this is a fork/adaptation."
+    },
+    "categories": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "icon": {
+      "type": ["string", "null"],
+      "description": "Repo-relative path (e.g. assets/icon.png) or absolute https URL."
+    },
+    "latest_version": { "type": ["string", "null"] },
+    "package": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["url", "sha256"],
+          "properties": {
+            "url": { "type": "string", "format": "uri" },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-fA-F0-9]{64}$"
+            },
+            "size_bytes": { "type": ["integer", "null"], "minimum": 0 },
+            "platforms": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "windows-x86_64",
+                  "linux-x86_64",
+                  "macos-aarch64",
+                  "macos-x86_64"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
