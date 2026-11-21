@@ -59,8 +59,10 @@ Override with `VITE_ACOWORK_APP_GALLERY_URL` or
 ## First entry
 
 [`apps/acowork/figcraft`](apps/acowork/figcraft) →
-[acowork/figcraft-app](https://github.com/acowork/figcraft-app).
-`package` stays `null` until a signed `.app` Release exists.
+[acowork/figcraft-app](https://github.com/acowork/figcraft-app)
+(public name **FigCraft (ACowork)**; upstream
+[storytold/figcraft](https://github.com/storytold/figcraft)).
+Latest Windows package: [v0.18.2-acowork](https://github.com/acowork/figcraft-app/releases/tag/v0.18.2-acowork).
 
 ## Trust
 

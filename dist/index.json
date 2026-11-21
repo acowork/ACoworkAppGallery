@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-18T11:29:40Z",
+  "generated_at": "2026-11-21T02:26:15Z",
   "source": {
     "repository": "https://github.com/acowork/ACoworkAppGallery",
-    "commit": "434b0da43baf105fcd567045db7684e73b3d070a"
+    "commit": "043927046565f56ec79630acd28e514380d1e466"
   },
   "apps": [
     {
       "id": "figcraft",
-      "name": "FigCraft",
-      "summary": "Interface design and prototyping in pure Rust — ACowork hosted adaptation of FigCraft for iframe install.",
+      "name": "FigCraft (ACowork)",
+      "summary": "ACowork hosted adaptation of FigCraft — interface design and prototyping in an iframe. Based on FigCraft by the ArtCraft team; not an ArtCraft product.",
       "publisher": {
         "id": "acowork",
         "display_name": "ACowork",
@@ -17,23 +17,23 @@
       },
       "license": "MIT OR Apache-2.0",
       "repository": "https://github.com/acowork/figcraft-app",
-      "homepage": "https://getartcraft.com/apps/figcraft",
+      "homepage": "https://github.com/acowork/figcraft-app",
       "upstream": "https://github.com/storytold/figcraft",
       "categories": [
         "design",
         "productivity"
       ],
       "icon": "https://gallery.acowork.ai/apps/acowork/figcraft/assets/icon.png",
-      "latest_version": "0.18.1",
+      "latest_version": "0.18.2",
       "package": {
-        "url": "https://github.com/acowork/figcraft-app/releases/download/v0.18.1-acowork/figcraft-0.18.1-windows-x86_64.app.zip",
-        "sha256": "a26bb24c86286dfaeea96f9ccfde0e004ad492d2a47a4d7e22848b017f07dcdf",
-        "size_bytes": 2178093,
+        "url": "https://github.com/acowork/figcraft-app/releases/download/v0.18.2-acowork/figcraft-0.18.2-windows-x86_64.app.zip",
+        "sha256": "1ffe1d3d50b2e8a33c17ddf651676c59383d0c333d1bcfa3ac14cb8db73872a9",
+        "size_bytes": 31625267,
         "platforms": [
           "windows-x86_64"
         ]
       },
-      "readme_md": "# FigCraft (ACowork)\n\nOpen-source interface design and prototyping — frames, auto layout, components,\nvariants, vectors, styles, variables and prototypes — adapted so ACowork can\ninstall it as a **hosted app** and show the UI in a Desktop iframe.\n\n| | |\n|---|---|\n| **ACowork package repo** | [acowork/figcraft-app](https://github.com/acowork/figcraft-app) |\n| **Upstream** | [storytold/figcraft](https://github.com/storytold/figcraft) |\n| **License** | MIT OR Apache-2.0 |\n| **Package** | [v0.18.1-acowork](https://github.com/acowork/figcraft-app/releases/tag/v0.18.1-acowork) (windows-x86_64) |\n\n## Status\n\nA thin ACowork host (`figcraft-acowork`) is packaged for Windows. It serves\n`/health` + `/ui/` for the Gateway supervisor. The current Release ships a\n**placeholder UI**; the full Trunk `figcraft-web` surface is not bundled yet.\n\nInstall requires a Gateway that accepts this package (unsigned packages need\n`apps.allow_unsigned = true` or `dev_mode` until a signed Release is published).\n\n## Privacy\n\nYour design files stay on disk; nothing is sent unless you share a file. See\nupstream docs for sharing behaviour.\n",
+      "readme_md": "# FigCraft (ACowork)\n\nACowork hosted adaptation of FigCraft — frames, auto layout, components,\nvariants, vectors, styles, variables and prototypes — so Desktop can install\nit as a **hosted app** and show the UI in an iframe.\n\nThis listing is published by **ACowork**. It is based on FigCraft by the\nArtCraft team. It is **not** an ArtCraft product and is not sponsored,\nendorsed, certified or supported by the ArtCraft Team.\n\n| | |\n|---|---|\n| **ACowork package repo** | [acowork/figcraft-app](https://github.com/acowork/figcraft-app) |\n| **Upstream** | [storytold/figcraft](https://github.com/storytold/figcraft) |\n| **License** | MIT OR Apache-2.0 |\n| **Package** | [v0.18.2-acowork](https://github.com/acowork/figcraft-app/releases/tag/v0.18.2-acowork) (windows-x86_64) |\n\n## Name and marks\n\n- Public name: **FigCraft (ACowork)**. Package id remains `figcraft`.\n- The gallery icon is the upstream **FigCraft app icon** (MIT OR Apache-2.0), not the ArtCraft mark.\n- ArtCraft name, wordmark and logos are trademarks and are **not** used here.\n\n## Status\n\nA thin ACowork host (`figcraft-acowork`) is packaged for Windows. It serves\n`/health` + `/ui/` for the Gateway supervisor and bundles the Trunk\n`figcraft-web` surface. Desktop treats it as a **visual canvas** app\n(`ui.canvas.kind = visual`): workspace `.figcraft` files open in the hosted\nUI, and MCP tools write a sibling `.preview.png` for chat/editor cards.\n\nInstall requires a Gateway that accepts this package (unsigned packages need\n`apps.allow_unsigned = true` or `dev_mode` until a signed Release is published).\n\n## Privacy\n\nYour design files stay on disk; nothing is sent unless you share a file. See\nupstream docs for sharing behaviour.\n",
       "source_path": "apps/acowork/figcraft"
     }
   ]
