@@ -1,11 +1,13 @@
-# Deploy App Gallery (Cloudflare Pages)
+# Deploy App Gallery (Cloudflare Workers)
 
 Target: **https://gallery.acowork.ai** — sister of `hub.acowork.ai`.
+The Worker is `acoworkappgallery`; static files come from [`site/`](../site)
+via [`wrangler.jsonc`](../wrangler.jsonc).
 
 ## One-time: Cloudflare ↔ GitHub
 
-1. Cloudflare Dashboard → **Workers & Pages** → **Create** → **Pages** →
-   **Connect to Git**.
+1. Cloudflare Dashboard → **Workers & Pages** → **Create** → connect GitHub
+   repo **ACoworkAppGallery** as a Worker (static assets), not a Pages project.
 2. Authorize the `acowork` org and select **ACoworkAppGallery**.
 3. Build settings:
 
@@ -13,16 +15,18 @@ Target: **https://gallery.acowork.ai** — sister of `hub.acowork.ai`.
    |---|---|
    | Production branch | `main` |
    | Build command | `python3 tools/build-index.py` |
-   | Build output directory | `site` |
+   | Deploy / preview | Wrangler uses [`wrangler.jsonc`](../wrangler.jsonc) (`assets.directory = ./site`, empty `previews`) |
    | Root directory | `/` (repo root) |
 
-4. Environment: Python is available on Pages build images; if the image
-   lacks `python3`, change the build command to
+4. Environment: Python is available on the build image; if it lacks
+   `python3`, change the build command to
    `pip install --user nothing 2>/dev/null; python tools/build-index.py`
    or commit a prebuilt `site/data/index.json` (this repo does both).
+   PR checks run `npx wrangler preview`, which **requires** the `previews`
+   block in Wrangler config (it can be empty).
 5. After the first deploy succeeds, **Custom domains** → add
    `gallery.acowork.ai` (CNAME already in [`site/CNAME`](../site/CNAME)).
-6. Point DNS for `gallery.acowork.ai` at Cloudflare Pages (usually automatic
+6. Point DNS for `gallery.acowork.ai` at the Worker (usually automatic
    when the zone for `acowork.ai` is on Cloudflare).
 
 Every push to `main` rebuilds and republishes. Desktop fetches:
