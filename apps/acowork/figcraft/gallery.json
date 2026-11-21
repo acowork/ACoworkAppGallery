@@ -1,7 +1,7 @@
 {
   "id": "figcraft",
-  "name": "FigCraft",
-  "summary": "Interface design and prototyping in pure Rust — ACowork hosted adaptation of FigCraft for iframe install.",
+  "name": "FigCraft (ACowork)",
+  "summary": "ACowork hosted adaptation of FigCraft — interface design and prototyping in an iframe. Based on FigCraft by the ArtCraft team; not an ArtCraft product.",
   "publisher": {
     "id": "acowork",
     "display_name": "ACowork",
@@ -9,15 +9,15 @@
   },
   "license": "MIT OR Apache-2.0",
   "repository": "https://github.com/acowork/figcraft-app",
-  "homepage": "https://getartcraft.com/apps/figcraft",
+  "homepage": "https://github.com/acowork/figcraft-app",
   "upstream": "https://github.com/storytold/figcraft",
   "categories": ["design", "productivity"],
   "icon": "assets/icon.png",
-  "latest_version": "0.18.1",
+  "latest_version": "0.18.2",
   "package": {
-    "url": "https://github.com/acowork/figcraft-app/releases/download/v0.18.1-acowork/figcraft-0.18.1-windows-x86_64.app.zip",
-    "sha256": "a26bb24c86286dfaeea96f9ccfde0e004ad492d2a47a4d7e22848b017f07dcdf",
-    "size_bytes": 2178093,
+    "url": "https://github.com/acowork/figcraft-app/releases/download/v0.18.2-acowork/figcraft-0.18.2-windows-x86_64.app.zip",
+    "sha256": "1ffe1d3d50b2e8a33c17ddf651676c59383d0c333d1bcfa3ac14cb8db73872a9",
+    "size_bytes": 31625267,
     "platforms": ["windows-x86_64"]
   }
 }

@@ -150,11 +150,18 @@ function showDetail(app) {
   const repo = document.getElementById("d-repo");
   repo.href = app.repository || "#";
   const home = document.getElementById("d-home");
-  if (app.homepage) {
+  if (app.homepage && app.homepage !== app.repository) {
     home.href = app.homepage;
     home.hidden = false;
   } else {
     home.hidden = true;
+  }
+  const upstream = document.getElementById("d-upstream");
+  if (app.upstream && app.upstream !== app.repository && app.upstream !== app.homepage) {
+    upstream.href = app.upstream;
+    upstream.hidden = false;
+  } else {
+    upstream.hidden = true;
   }
   const pkg = document.getElementById("d-pkg");
   if (app.package?.url) {
