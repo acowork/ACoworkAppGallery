@@ -1,7 +1,7 @@
 {
   "id": "figcraft",
   "name": "FigCraft (ACowork)",
-  "summary": "ACowork hosted adaptation of FigCraft — interface design and prototyping in an iframe. Based on FigCraft by the ArtCraft team; not an ArtCraft product.",
+  "summary": "Interface design and prototyping: frames, auto layout, components and variants, styles, variables and interactive prototypes.",
   "publisher": {
     "id": "acowork",
     "display_name": "ACowork",
@@ -11,13 +11,18 @@
   "repository": "https://github.com/acowork/figcraft-app",
   "homepage": "https://github.com/acowork/figcraft-app",
   "upstream": "https://github.com/storytold/figcraft",
-  "categories": ["design", "productivity"],
+  "categories": [
+    "design",
+    "productivity"
+  ],
   "icon": "assets/icon.png",
   "latest_version": "0.18.2",
   "package": {
     "url": "https://github.com/acowork/figcraft-app/releases/download/v0.18.2-acowork/figcraft-0.18.2-windows-x86_64.app.zip",
     "sha256": "1ffe1d3d50b2e8a33c17ddf651676c59383d0c333d1bcfa3ac14cb8db73872a9",
     "size_bytes": 31625267,
-    "platforms": ["windows-x86_64"]
+    "platforms": [
+      "windows-x86_64"
+    ]
   }
 }

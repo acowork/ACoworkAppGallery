@@ -1,15 +1,15 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-21T02:26:15Z",
+  "generated_at": "2026-11-23T09:36:26Z",
   "source": {
     "repository": "https://github.com/acowork/ACoworkAppGallery",
-    "commit": "043927046565f56ec79630acd28e514380d1e466"
+    "commit": "ce9cc7a67b7fabb8cad70b4bbf1776d753a4aa89"
   },
   "apps": [
     {
       "id": "figcraft",
       "name": "FigCraft (ACowork)",
-      "summary": "ACowork hosted adaptation of FigCraft — interface design and prototyping in an iframe. Based on FigCraft by the ArtCraft team; not an ArtCraft product.",
+      "summary": "Interface design and prototyping: frames, auto layout, components and variants, styles, variables and interactive prototypes.",
       "publisher": {
         "id": "acowork",
         "display_name": "ACowork",
@@ -33,7 +33,7 @@
           "windows-x86_64"
         ]
       },
-      "readme_md": "# FigCraft (ACowork)\n\nACowork hosted adaptation of FigCraft — frames, auto layout, components,\nvariants, vectors, styles, variables and prototypes — so Desktop can install\nit as a **hosted app** and show the UI in an iframe.\n\nThis listing is published by **ACowork**. It is based on FigCraft by the\nArtCraft team. It is **not** an ArtCraft product and is not sponsored,\nendorsed, certified or supported by the ArtCraft Team.\n\n| | |\n|---|---|\n| **ACowork package repo** | [acowork/figcraft-app](https://github.com/acowork/figcraft-app) |\n| **Upstream** | [storytold/figcraft](https://github.com/storytold/figcraft) |\n| **License** | MIT OR Apache-2.0 |\n| **Package** | [v0.18.2-acowork](https://github.com/acowork/figcraft-app/releases/tag/v0.18.2-acowork) (windows-x86_64) |\n\n## Name and marks\n\n- Public name: **FigCraft (ACowork)**. Package id remains `figcraft`.\n- The gallery icon is the upstream **FigCraft app icon** (MIT OR Apache-2.0), not the ArtCraft mark.\n- ArtCraft name, wordmark and logos are trademarks and are **not** used here.\n\n## Status\n\nA thin ACowork host (`figcraft-acowork`) is packaged for Windows. It serves\n`/health` + `/ui/` for the Gateway supervisor and bundles the Trunk\n`figcraft-web` surface. Desktop treats it as a **visual canvas** app\n(`ui.canvas.kind = visual`): workspace `.figcraft` files open in the hosted\nUI, and MCP tools write a sibling `.preview.png` for chat/editor cards.\n\nInstall requires a Gateway that accepts this package (unsigned packages need\n`apps.allow_unsigned = true` or `dev_mode` until a signed Release is published).\n\n## Privacy\n\nYour design files stay on disk; nothing is sent unless you share a file. See\nupstream docs for sharing behaviour.\n",
+      "readme_md": "# Figcraft (ACowork)\n\nInterface design and prototyping in ACowork: frames, auto layout, components and variants, vectors, styles, variables and interactive prototypes — edited in a hosted canvas and drivable by agents over MCP.\n\n## Features\n\n- Frames and auto layout for responsive screens; components with variants and overrides.\n- Vector editing, fills/strokes/effects, shared styles and design variables.\n- Prototypes with interactions; export PNG / JPEG / WebP / SVG / PDF.\n- Inspect and drive the live UI: `ui.inspect`, `ui.pointer`, `ui.key`, `ui.type`.\n\n## Working with agents in ACowork\n\nInstalling the app adds it to the Desktop nav and registers its MCP tools with\nthe Gateway. Every agent session gets a headless document session **confined to\nthe workspace it is acting on**: open, inspect and edit files through tools, and\nrender a page or slide back as an image the agent can look at and attach to chat.\nEdits land in the same workspace file the hosted UI shows, and the app's Save\nwrites back to it — so you and the agent edit one document, not two copies.\n\nTypical loop: drop a file into the workspace (or attach it in chat), ask the agent\nto change it, watch the result in the hosted UI, keep or refine it by hand.\n- `document.inspect`, `node.create` / `node.get` / `node.set`, `select.set`,\n  `text.edit.begin` / `text.edit.end` for structural edits.\n- `file.open` / `file.save` / `file.export`, `run_command` / `command.batch`,\n  `screenshot` and `wait_for_changes` for look-and-verify loops.\n\nAsk e.g. *\"rebuild this screenshot as a login frame with auto layout\"* or *\"rename\nevery component variant to the new token names and export a PNG\"*. Workspace\n`.figcraft` files open in the hosted UI; renders write a sibling `.preview.png`\nfor chat and editor cards.\n\n## License\n\nHosted adaptation of upstream FigCraft (MIT OR Apache-2.0); ACowork is not affiliated with or\nendorsed by the upstream authors. Links: [package repo](https://github.com/acowork/figcraft-app) ·\n[upstream](https://github.com/storytold/figcraft) · [release](https://github.com/acowork/figcraft-app/releases).\n\nFiles stay on this machine; nothing leaves it unless you share a file. Unsigned\npackages need `apps.allow_unsigned = true` or `dev_mode` until a signed Release exists.\n",
       "source_path": "apps/acowork/figcraft"
     }
   ]
