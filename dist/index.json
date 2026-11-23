@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-23T09:36:26Z",
+  "generated_at": "2026-11-23T09:37:08Z",
   "source": {
     "repository": "https://github.com/acowork/ACoworkAppGallery",
-    "commit": "ce9cc7a67b7fabb8cad70b4bbf1776d753a4aa89"
+    "commit": "0db2d5797ae388a443931bb1250cab3d3b41adb8"
   },
   "apps": [
     {
