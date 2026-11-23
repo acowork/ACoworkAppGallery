@@ -1,0 +1,28 @@
+{
+  "id": "gridcraft",
+  "name": "GridCraft (ACowork)",
+  "summary": "Spreadsheets: cells, a formula engine, charts and formatting; opens and saves Excel (.xlsx).",
+  "publisher": {
+    "id": "acowork",
+    "display_name": "ACowork",
+    "homepage": "https://acowork.ai"
+  },
+  "license": "MIT OR Apache-2.0",
+  "repository": "https://github.com/acowork/gridcraft-app",
+  "homepage": "https://github.com/acowork/gridcraft-app",
+  "upstream": "https://github.com/storytold/gridcraft",
+  "categories": [
+    "productivity",
+    "spreadsheets"
+  ],
+  "icon": "assets/icon.png",
+  "latest_version": "0.19.4",
+  "package": {
+    "url": "https://github.com/acowork/gridcraft-app/releases/download/v0.19.4-acowork/gridcraft-0.19.4-windows-x86_64.app.zip",
+    "sha256": "1373ef5c4763b462b2e535114ce80239af242b4dbaba9bc06e989a84bb07cffb",
+    "size_bytes": 17935644,
+    "platforms": [
+      "windows-x86_64"
+    ]
+  }
+}

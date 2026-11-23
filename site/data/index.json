@@ -1,11 +1,41 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-23T09:37:08Z",
+  "generated_at": "2026-11-23T10:13:29Z",
   "source": {
     "repository": "https://github.com/acowork/ACoworkAppGallery",
-    "commit": "0db2d5797ae388a443931bb1250cab3d3b41adb8"
+    "commit": "a0d11625fc8da735fe711d56c31ea644470e8522"
   },
   "apps": [
+    {
+      "id": "deckcraft",
+      "name": "DeckCraft (ACowork)",
+      "summary": "Presentations: slides, masters, shapes, tables and charts; opens and saves PowerPoint (.pptx).",
+      "publisher": {
+        "id": "acowork",
+        "display_name": "ACowork",
+        "homepage": "https://acowork.ai"
+      },
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/acowork/deckcraft-app",
+      "homepage": "https://github.com/acowork/deckcraft-app",
+      "upstream": "https://github.com/storytold/deckcraft",
+      "categories": [
+        "productivity",
+        "presentations"
+      ],
+      "icon": "https://gallery.acowork.ai/apps/acowork/deckcraft/assets/icon.png",
+      "latest_version": "0.19.3",
+      "package": {
+        "url": "https://github.com/acowork/deckcraft-app/releases/download/v0.19.3-acowork/deckcraft-0.19.3-windows-x86_64.app.zip",
+        "sha256": "b996ffccb7f294a08284a305d1568d919f08b415240d9a0bf07be4a22f4d25ad",
+        "size_bytes": 62721208,
+        "platforms": [
+          "windows-x86_64"
+        ]
+      },
+      "readme_md": "# DeckCraft (ACowork)\n\nPresentations in ACowork: slides, masters and layouts, shapes, tables and charts, themes and text formatting. Opens and saves PowerPoint (`.pptx`, reads `.ppt` / `.potx`), exports PDF — in a hosted canvas agents can edit over MCP.\n\n## Features\n\n- Slide editor with masters/layouts, themes, guides and pasteboard overflow.\n- Shapes, tables, charts and pictures; per-run text formatting and font fallback.\n- PowerPoint round-trip (`.pptx` save is the default), PDF export, slide renders.\n- Presenter view and slide sorter for review passes.\n\n## Working with agents in ACowork\n\nInstalling the app adds it to the Desktop nav and registers its MCP tools with\nthe Gateway. Every agent session gets a headless document session **confined to\nthe workspace it is acting on**: open, inspect and edit files through tools, and\nrender a page or slide back as an image the agent can look at and attach to chat.\nEdits land in the same workspace file the hosted UI shows, and the app's Save\nwrites back to it — so you and the agent edit one document, not two copies.\n\nTypical loop: drop a file into the workspace (or attach it in chat), ask the agent\nto change it, watch the result in the hosted UI, keep or refine it by hand.\n- `document`, `go_to_slide`, `add_shape`, `set_text`, `insert_chart`, `export`.\n- `render_slide` / `screenshot` return the slide as an image so the agent can see\n  what it built; `run_command` / `commands` / `list_commands` expose the rest.\n\nAsk e.g. *\"turn page 3 into two columns with a chart\"* or *\"apply the brand theme\nto every slide and export a PDF\"*. Workspace `.pptx` / `.deckcraft` files open in\nthe hosted UI; Save writes back to the same file.\n\n## License\n\nHosted adaptation of upstream DeckCraft, used under its MIT OR Apache-2.0 license. Links: [package repo](https://github.com/acowork/deckcraft-app) ·\n[upstream](https://github.com/storytold/deckcraft) · [release](https://github.com/acowork/deckcraft-app/releases).\n\nFiles stay on this machine; nothing leaves it unless you share a file. Unsigned\npackages need `apps.allow_unsigned = true` or `dev_mode` until a signed Release exists.\n",
+      "source_path": "apps/acowork/deckcraft"
+    },
     {
       "id": "figcraft",
       "name": "FigCraft (ACowork)",
@@ -27,14 +57,134 @@
       "latest_version": "0.18.2",
       "package": {
         "url": "https://github.com/acowork/figcraft-app/releases/download/v0.18.2-acowork/figcraft-0.18.2-windows-x86_64.app.zip",
-        "sha256": "1ffe1d3d50b2e8a33c17ddf651676c59383d0c333d1bcfa3ac14cb8db73872a9",
-        "size_bytes": 31625267,
+        "sha256": "c59578d73ceaf525eaf957bf6bc0d0d0958c543ec8d111dd821adf7aad2acfd3",
+        "size_bytes": 31685517,
         "platforms": [
           "windows-x86_64"
         ]
       },
-      "readme_md": "# Figcraft (ACowork)\n\nInterface design and prototyping in ACowork: frames, auto layout, components and variants, vectors, styles, variables and interactive prototypes — edited in a hosted canvas and drivable by agents over MCP.\n\n## Features\n\n- Frames and auto layout for responsive screens; components with variants and overrides.\n- Vector editing, fills/strokes/effects, shared styles and design variables.\n- Prototypes with interactions; export PNG / JPEG / WebP / SVG / PDF.\n- Inspect and drive the live UI: `ui.inspect`, `ui.pointer`, `ui.key`, `ui.type`.\n\n## Working with agents in ACowork\n\nInstalling the app adds it to the Desktop nav and registers its MCP tools with\nthe Gateway. Every agent session gets a headless document session **confined to\nthe workspace it is acting on**: open, inspect and edit files through tools, and\nrender a page or slide back as an image the agent can look at and attach to chat.\nEdits land in the same workspace file the hosted UI shows, and the app's Save\nwrites back to it — so you and the agent edit one document, not two copies.\n\nTypical loop: drop a file into the workspace (or attach it in chat), ask the agent\nto change it, watch the result in the hosted UI, keep or refine it by hand.\n- `document.inspect`, `node.create` / `node.get` / `node.set`, `select.set`,\n  `text.edit.begin` / `text.edit.end` for structural edits.\n- `file.open` / `file.save` / `file.export`, `run_command` / `command.batch`,\n  `screenshot` and `wait_for_changes` for look-and-verify loops.\n\nAsk e.g. *\"rebuild this screenshot as a login frame with auto layout\"* or *\"rename\nevery component variant to the new token names and export a PNG\"*. Workspace\n`.figcraft` files open in the hosted UI; renders write a sibling `.preview.png`\nfor chat and editor cards.\n\n## License\n\nHosted adaptation of upstream FigCraft (MIT OR Apache-2.0); ACowork is not affiliated with or\nendorsed by the upstream authors. Links: [package repo](https://github.com/acowork/figcraft-app) ·\n[upstream](https://github.com/storytold/figcraft) · [release](https://github.com/acowork/figcraft-app/releases).\n\nFiles stay on this machine; nothing leaves it unless you share a file. Unsigned\npackages need `apps.allow_unsigned = true` or `dev_mode` until a signed Release exists.\n",
+      "readme_md": "# FigCraft (ACowork)\n\nInterface design and prototyping in ACowork: frames, auto layout, components and variants, vectors, styles, variables and interactive prototypes — edited in a hosted canvas and drivable by agents over MCP.\n\n## Features\n\n- Frames and auto layout for responsive screens; components with variants and overrides.\n- Vector editing, fills/strokes/effects, shared styles and design variables.\n- Prototypes with interactions; export PNG / JPEG / WebP / SVG / PDF.\n- Inspect and drive the live UI: `ui.inspect`, `ui.pointer`, `ui.key`, `ui.type`.\n\n## Working with agents in ACowork\n\nInstalling the app adds it to the Desktop nav and registers its MCP tools with\nthe Gateway. Every agent session gets a headless document session **confined to\nthe workspace it is acting on**: open, inspect and edit files through tools, and\nrender a page or slide back as an image the agent can look at and attach to chat.\nEdits land in the same workspace file the hosted UI shows, and the app's Save\nwrites back to it — so you and the agent edit one document, not two copies.\n\nTypical loop: drop a file into the workspace (or attach it in chat), ask the agent\nto change it, watch the result in the hosted UI, keep or refine it by hand.\n- `document.inspect`, `node.create` / `node.get` / `node.set`, `select.set`,\n  `text.edit.begin` / `text.edit.end` for structural edits.\n- `file.open` / `file.save` / `file.export`, `run_command` / `command.batch`,\n  `screenshot` and `wait_for_changes` for look-and-verify loops.\n\nAsk e.g. *\"rebuild this screenshot as a login frame with auto layout\"* or *\"rename\nevery component variant to the new token names and export a PNG\"*. Workspace\n`.figcraft` files open in the hosted UI; renders write a sibling `.preview.png`\nfor chat and editor cards.\n\n## License\n\nHosted adaptation of upstream FigCraft, used under its MIT OR Apache-2.0 license. Links: [package repo](https://github.com/acowork/figcraft-app) ·\n[upstream](https://github.com/storytold/figcraft) · [release](https://github.com/acowork/figcraft-app/releases).\n\nFiles stay on this machine; nothing leaves it unless you share a file. Unsigned\npackages need `apps.allow_unsigned = true` or `dev_mode` until a signed Release exists.\n",
       "source_path": "apps/acowork/figcraft"
+    },
+    {
+      "id": "gridcraft",
+      "name": "GridCraft (ACowork)",
+      "summary": "Spreadsheets: cells, a formula engine, charts and formatting; opens and saves Excel (.xlsx).",
+      "publisher": {
+        "id": "acowork",
+        "display_name": "ACowork",
+        "homepage": "https://acowork.ai"
+      },
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/acowork/gridcraft-app",
+      "homepage": "https://github.com/acowork/gridcraft-app",
+      "upstream": "https://github.com/storytold/gridcraft",
+      "categories": [
+        "productivity",
+        "spreadsheets"
+      ],
+      "icon": "https://gallery.acowork.ai/apps/acowork/gridcraft/assets/icon.png",
+      "latest_version": "0.19.4",
+      "package": {
+        "url": "https://github.com/acowork/gridcraft-app/releases/download/v0.19.4-acowork/gridcraft-0.19.4-windows-x86_64.app.zip",
+        "sha256": "1373ef5c4763b462b2e535114ce80239af242b4dbaba9bc06e989a84bb07cffb",
+        "size_bytes": 17935644,
+        "platforms": [
+          "windows-x86_64"
+        ]
+      },
+      "readme_md": "# GridCraft (ACowork)\n\nSpreadsheets in ACowork: cells, a real formula engine, charts, formatting and sorting. Opens and saves Excel (`.xlsx`) in a hosted grid agents can compute on over MCP.\n\n## Features\n\n- Formula engine with the common Excel function set and live recalculation.\n- Range formatting, number formats, sort and filter; charts from ranges.\n- Multiple sheets, cell pictures and floating objects.\n- Excel round-trip (`.xlsx` default save).\n\n## Working with agents in ACowork\n\nInstalling the app adds it to the Desktop nav and registers its MCP tools with\nthe Gateway. Every agent session gets a headless document session **confined to\nthe workspace it is acting on**: open, inspect and edit files through tools, and\nrender a page or slide back as an image the agent can look at and attach to chat.\nEdits land in the same workspace file the hosted UI shows, and the app's Save\nwrites back to it — so you and the agent edit one document, not two copies.\n\nTypical loop: drop a file into the workspace (or attach it in chat), ask the agent\nto change it, watch the result in the hosted UI, keep or refine it by hand.\n- `get_cell` / `set_cell`, `evaluate_formula`, `format_range`, `sort_range`,\n  `insert_chart`, plus `commands` for everything else.\n- The agent reads and writes the same workbook the UI shows; formulas are\n  evaluated by the engine, not guessed by the model.\n\nAsk e.g. *\"read sales.xlsx, add monthly totals and a column chart\"* or *\"clean the\ndate column and sort by revenue\"*. Workspace `.xlsx` files open in the hosted UI;\nSave writes back to the same file.\n\n## License\n\nHosted adaptation of upstream GridCraft, used under its MIT OR Apache-2.0 license. Links: [package repo](https://github.com/acowork/gridcraft-app) ·\n[upstream](https://github.com/storytold/gridcraft) · [release](https://github.com/acowork/gridcraft-app/releases).\n\nFiles stay on this machine; nothing leaves it unless you share a file. Unsigned\npackages need `apps.allow_unsigned = true` or `dev_mode` until a signed Release exists.\n",
+      "source_path": "apps/acowork/gridcraft"
+    },
+    {
+      "id": "pdfcraft",
+      "name": "PdfCraft (ACowork)",
+      "summary": "PDF: read, annotate, fill and sign forms, redact, OCR, split/combine and export.",
+      "publisher": {
+        "id": "acowork",
+        "display_name": "ACowork",
+        "homepage": "https://acowork.ai"
+      },
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/acowork/pdfcraft-app",
+      "homepage": "https://github.com/acowork/pdfcraft-app",
+      "upstream": "https://github.com/storytold/pdfcraft",
+      "categories": [
+        "productivity",
+        "documents"
+      ],
+      "icon": "https://gallery.acowork.ai/apps/acowork/pdfcraft/assets/icon.png",
+      "latest_version": "0.21.4",
+      "package": {
+        "url": "https://github.com/acowork/pdfcraft-app/releases/download/v0.21.4-acowork/pdfcraft-0.21.4-windows-x86_64.app.zip",
+        "sha256": "44d643b38c89fcb52872f160fca1210217bafb4e9669dbede89e01f9a6e99f43",
+        "size_bytes": 42797578,
+        "platforms": [
+          "windows-x86_64"
+        ]
+      },
+      "readme_md": "# PdfCraft (ACowork)\n\nPDF in ACowork: read, annotate, fill and sign forms, redact, OCR, reorganize and export — a full PDF workbench in a hosted canvas agents can drive over MCP.\n\n## Features\n\n- Viewing, annotations and comments; form filling and signatures.\n- Redaction, OCR for scanned pages, accessibility and preflight checks.\n- Organize: split, combine, reorder, bookmarks, Bates numbering, optimize.\n- Export text, images, data and Office formats from PDF content.\n\n## Working with agents in ACowork\n\nInstalling the app adds it to the Desktop nav and registers its MCP tools with\nthe Gateway. Every agent session gets a headless document session **confined to\nthe workspace it is acting on**: open, inspect and edit files through tools, and\nrender a page or slide back as an image the agent can look at and attach to chat.\nEdits land in the same workspace file the hosted UI shows, and the app's Save\nwrites back to it — so you and the agent edit one document, not two copies.\n\nTypical loop: drop a file into the workspace (or attach it in chat), ask the agent\nto change it, watch the result in the hosted UI, keep or refine it by hand.\n- `doc_open` / `doc_inspect` / `doc_info` / `doc_save`, `doc_split` / `doc_combine` /\n  `doc_optimize`, `doc_export_text` / `doc_export_images` / `doc_export_office`.\n- `command_run` / `command_batch` / `command_list` for the long tail (annotations,\n  forms, redaction, OCR), `edit_undo` to back out a bad batch.\n\nAsk e.g. *\"combine these two PDFs and add Bates numbers\"* or *\"redact every email\naddress and export the text\"*. Workspace `.pdf` files open in the hosted UI; Save\nwrites back to the same file.\n\n## License\n\nHosted adaptation of upstream PdfCraft, used under its MIT OR Apache-2.0 license. Links: [package repo](https://github.com/acowork/pdfcraft-app) ·\n[upstream](https://github.com/storytold/pdfcraft) · [release](https://github.com/acowork/pdfcraft-app/releases).\n\nFiles stay on this machine; nothing leaves it unless you share a file. Unsigned\npackages need `apps.allow_unsigned = true` or `dev_mode` until a signed Release exists.\n",
+      "source_path": "apps/acowork/pdfcraft"
+    },
+    {
+      "id": "vectorcraft",
+      "name": "VectorCraft (ACowork)",
+      "summary": "Vector illustration: paths, brushes and effects; SVG native, imports AI/EPS/CDR/PDF, exports SVG/PDF/PNG.",
+      "publisher": {
+        "id": "acowork",
+        "display_name": "ACowork",
+        "homepage": "https://acowork.ai"
+      },
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/acowork/vectorcraft-app",
+      "homepage": "https://github.com/acowork/vectorcraft-app",
+      "upstream": "https://github.com/storytold/vectorcraft",
+      "categories": [
+        "design",
+        "productivity"
+      ],
+      "icon": "https://gallery.acowork.ai/apps/acowork/vectorcraft/assets/icon.png",
+      "latest_version": "0.24.4",
+      "package": {
+        "url": "https://github.com/acowork/vectorcraft-app/releases/download/v0.24.4-acowork/vectorcraft-0.24.4-windows-x86_64.app.zip",
+        "sha256": "b3cb4bb158e6d16f7cc84816be93db89c0adf40872604570d47f9c89f9479e35",
+        "size_bytes": 76868322,
+        "platforms": [
+          "windows-x86_64"
+        ]
+      },
+      "readme_md": "# VectorCraft (ACowork)\n\nVector illustration in ACowork: paths, brushes and effects with SVG as the native format. Imports AI / EPS / CDR / PDF artwork, exports SVG / PDF / PNG — in a hosted canvas agents can edit over MCP.\n\n## Features\n\n- Bezier path editing, brushes, live effects and boolean path operations.\n- SVG-native document model; imports AI, EPS, CDR, PDF and metafiles.\n- Export SVG, PDF and raster (PNG) at chosen sizes; image tracing.\n- Undo history and format-aware save options.\n\n## Working with agents in ACowork\n\nInstalling the app adds it to the Desktop nav and registers its MCP tools with\nthe Gateway. Every agent session gets a headless document session **confined to\nthe workspace it is acting on**: open, inspect and edit files through tools, and\nrender a page or slide back as an image the agent can look at and attach to chat.\nEdits land in the same workspace file the hosted UI shows, and the app's Save\nwrites back to it — so you and the agent edit one document, not two copies.\n\nTypical loop: drop a file into the workspace (or attach it in chat), ask the agent\nto change it, watch the result in the hosted UI, keep or refine it by hand.\n- `document` / `doc_inspect`, `run_command` / `commands` / `list_commands`,\n  `save_file`, `undo`, `formats`.\n- The agent edits paths and styles structurally, then renders to check the result\n  before saving.\n\nAsk e.g. *\"recolor logo.svg to the brand blue and export a 512px PNG\"* or *\"trace\nthis sketch into clean paths\"*. Workspace `.svg` and imported artwork open in the\nhosted UI; Save writes back to the same file.\n\n## License\n\nHosted adaptation of upstream VectorCraft, used under its MIT OR Apache-2.0 license. Links: [package repo](https://github.com/acowork/vectorcraft-app) ·\n[upstream](https://github.com/storytold/vectorcraft) · [release](https://github.com/acowork/vectorcraft-app/releases).\n\nFiles stay on this machine; nothing leaves it unless you share a file. Unsigned\npackages need `apps.allow_unsigned = true` or `dev_mode` until a signed Release exists.\n",
+      "source_path": "apps/acowork/vectorcraft"
+    },
+    {
+      "id": "wordcraft",
+      "name": "WordCraft (ACowork)",
+      "summary": "Documents: pages, styles, tables and citations; opens and saves Word (.docx) and Markdown.",
+      "publisher": {
+        "id": "acowork",
+        "display_name": "ACowork",
+        "homepage": "https://acowork.ai"
+      },
+      "license": "MIT OR Apache-2.0",
+      "repository": "https://github.com/acowork/wordcraft-app",
+      "homepage": "https://github.com/acowork/wordcraft-app",
+      "upstream": "https://github.com/storytold/wordcraft",
+      "categories": [
+        "productivity",
+        "documents"
+      ],
+      "icon": "https://gallery.acowork.ai/apps/acowork/wordcraft/assets/icon.png",
+      "latest_version": "0.18.4",
+      "package": {
+        "url": "https://github.com/acowork/wordcraft-app/releases/download/v0.18.4-acowork/wordcraft-0.18.4-windows-x86_64.app.zip",
+        "sha256": "117f51741ef9d58dd4c9392f4894436b09d09b9f7b266af1b8a9ff5ede4e9080",
+        "size_bytes": 38223200,
+        "platforms": [
+          "windows-x86_64"
+        ]
+      },
+      "readme_md": "# WordCraft (ACowork)\n\nDocuments in ACowork: paginated writing with styles, tables, headers and footers, and Zotero-backed citations. Opens and saves Word (`.docx`) and Markdown, exports PDF — in a hosted canvas agents can edit over MCP.\n\n## Features\n\n- True pagination with styles, sections, headers/footers and page setup.\n- Tables, images, comments and tracked changes; Markdown import/export.\n- Zotero integration for citations and bibliographies.\n- Word round-trip (`.docx` default save) and PDF export.\n\n## Working with agents in ACowork\n\nInstalling the app adds it to the Desktop nav and registers its MCP tools with\nthe Gateway. Every agent session gets a headless document session **confined to\nthe workspace it is acting on**: open, inspect and edit files through tools, and\nrender a page or slide back as an image the agent can look at and attach to chat.\nEdits land in the same workspace file the hosted UI shows, and the app's Save\nwrites back to it — so you and the agent edit one document, not two copies.\n\nTypical loop: drop a file into the workspace (or attach it in chat), ask the agent\nto change it, watch the result in the hosted UI, keep or refine it by hand.\n- `document`, `execute` / `commands`, `insert_table`, `type_text`.\n- `render_page` / `screenshot` return a page image so the agent can check layout,\n  not just markup.\n\nAsk e.g. *\"turn these meeting notes into a docx with heading levels and a summary\ntable\"* or *\"insert the results table and re-flow page 2\"*. Workspace `.docx` /\n`.md` files open in the hosted UI; Save writes back to the same file.\n\n## License\n\nHosted adaptation of upstream WordCraft, used under its MIT OR Apache-2.0 license. Links: [package repo](https://github.com/acowork/wordcraft-app) ·\n[upstream](https://github.com/storytold/wordcraft) · [release](https://github.com/acowork/wordcraft-app/releases).\n\nFiles stay on this machine; nothing leaves it unless you share a file. Unsigned\npackages need `apps.allow_unsigned = true` or `dev_mode` until a signed Release exists.\n",
+      "source_path": "apps/acowork/wordcraft"
     }
   ]
 }

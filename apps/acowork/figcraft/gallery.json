@@ -19,8 +19,8 @@
   "latest_version": "0.18.2",
   "package": {
     "url": "https://github.com/acowork/figcraft-app/releases/download/v0.18.2-acowork/figcraft-0.18.2-windows-x86_64.app.zip",
-    "sha256": "1ffe1d3d50b2e8a33c17ddf651676c59383d0c333d1bcfa3ac14cb8db73872a9",
-    "size_bytes": 31625267,
+    "sha256": "c59578d73ceaf525eaf957bf6bc0d0d0958c543ec8d111dd821adf7aad2acfd3",
+    "size_bytes": 31685517,
     "platforms": [
       "windows-x86_64"
     ]

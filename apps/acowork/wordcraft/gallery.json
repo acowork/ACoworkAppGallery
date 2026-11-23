@@ -1,0 +1,28 @@
+{
+  "id": "wordcraft",
+  "name": "WordCraft (ACowork)",
+  "summary": "Documents: pages, styles, tables and citations; opens and saves Word (.docx) and Markdown.",
+  "publisher": {
+    "id": "acowork",
+    "display_name": "ACowork",
+    "homepage": "https://acowork.ai"
+  },
+  "license": "MIT OR Apache-2.0",
+  "repository": "https://github.com/acowork/wordcraft-app",
+  "homepage": "https://github.com/acowork/wordcraft-app",
+  "upstream": "https://github.com/storytold/wordcraft",
+  "categories": [
+    "productivity",
+    "documents"
+  ],
+  "icon": "assets/icon.png",
+  "latest_version": "0.18.4",
+  "package": {
+    "url": "https://github.com/acowork/wordcraft-app/releases/download/v0.18.4-acowork/wordcraft-0.18.4-windows-x86_64.app.zip",
+    "sha256": "117f51741ef9d58dd4c9392f4894436b09d09b9f7b266af1b8a9ff5ede4e9080",
+    "size_bytes": 38223200,
+    "platforms": [
+      "windows-x86_64"
+    ]
+  }
+}

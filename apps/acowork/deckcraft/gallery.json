@@ -1,0 +1,28 @@
+{
+  "id": "deckcraft",
+  "name": "DeckCraft (ACowork)",
+  "summary": "Presentations: slides, masters, shapes, tables and charts; opens and saves PowerPoint (.pptx).",
+  "publisher": {
+    "id": "acowork",
+    "display_name": "ACowork",
+    "homepage": "https://acowork.ai"
+  },
+  "license": "MIT OR Apache-2.0",
+  "repository": "https://github.com/acowork/deckcraft-app",
+  "homepage": "https://github.com/acowork/deckcraft-app",
+  "upstream": "https://github.com/storytold/deckcraft",
+  "categories": [
+    "productivity",
+    "presentations"
+  ],
+  "icon": "assets/icon.png",
+  "latest_version": "0.19.3",
+  "package": {
+    "url": "https://github.com/acowork/deckcraft-app/releases/download/v0.19.3-acowork/deckcraft-0.19.3-windows-x86_64.app.zip",
+    "sha256": "b996ffccb7f294a08284a305d1568d919f08b415240d9a0bf07be4a22f4d25ad",
+    "size_bytes": 62721208,
+    "platforms": [
+      "windows-x86_64"
+    ]
+  }
+}

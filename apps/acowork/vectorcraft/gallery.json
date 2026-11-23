@@ -1,0 +1,28 @@
+{
+  "id": "vectorcraft",
+  "name": "VectorCraft (ACowork)",
+  "summary": "Vector illustration: paths, brushes and effects; SVG native, imports AI/EPS/CDR/PDF, exports SVG/PDF/PNG.",
+  "publisher": {
+    "id": "acowork",
+    "display_name": "ACowork",
+    "homepage": "https://acowork.ai"
+  },
+  "license": "MIT OR Apache-2.0",
+  "repository": "https://github.com/acowork/vectorcraft-app",
+  "homepage": "https://github.com/acowork/vectorcraft-app",
+  "upstream": "https://github.com/storytold/vectorcraft",
+  "categories": [
+    "design",
+    "productivity"
+  ],
+  "icon": "assets/icon.png",
+  "latest_version": "0.24.4",
+  "package": {
+    "url": "https://github.com/acowork/vectorcraft-app/releases/download/v0.24.4-acowork/vectorcraft-0.24.4-windows-x86_64.app.zip",
+    "sha256": "b3cb4bb158e6d16f7cc84816be93db89c0adf40872604570d47f9c89f9479e35",
+    "size_bytes": 76868322,
+    "platforms": [
+      "windows-x86_64"
+    ]
+  }
+}
