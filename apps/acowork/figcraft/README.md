@@ -32,8 +32,7 @@ for chat and editor cards.
 
 ## License
 
-Hosted adaptation of upstream FigCraft (MIT OR Apache-2.0); ACowork is not affiliated with or
-endorsed by the upstream authors. Links: [package repo](https://github.com/acowork/figcraft-app) ·
+Hosted adaptation of upstream FigCraft, used under its MIT OR Apache-2.0 license. Links: [package repo](https://github.com/acowork/figcraft-app) ·
 [upstream](https://github.com/storytold/figcraft) · [release](https://github.com/acowork/figcraft-app/releases).
 
 Files stay on this machine; nothing leaves it unless you share a file. Unsigned
