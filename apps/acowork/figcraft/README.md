@@ -1,4 +1,4 @@
-# Figcraft (ACowork)
+# FigCraft (ACowork)
 
 Interface design and prototyping in ACowork: frames, auto layout, components and variants, vectors, styles, variables and interactive prototypes — edited in a hosted canvas and drivable by agents over MCP.
 
