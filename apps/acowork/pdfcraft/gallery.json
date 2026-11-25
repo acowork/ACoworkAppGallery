@@ -16,11 +16,11 @@
     "documents"
   ],
   "icon": "assets/icon.png",
-  "latest_version": "0.21.4",
+  "latest_version": "0.21.5",
   "package": {
-    "url": "https://github.com/acowork/pdfcraft-app/releases/download/v0.21.4-acowork/pdfcraft-0.21.4-windows-x86_64.app.zip",
-    "sha256": "44d643b38c89fcb52872f160fca1210217bafb4e9669dbede89e01f9a6e99f43",
-    "size_bytes": 42797578,
+    "url": "https://github.com/acowork/pdfcraft-app/releases/download/v0.21.5-acowork/pdfcraft-0.21.5-windows-x86_64.app.zip",
+    "sha256": "704e65a074e90bee4b530063186e73d73488dac732657be342b572f8654c8e9b",
+    "size_bytes": 42797563,
     "platforms": [
       "windows-x86_64"
     ]

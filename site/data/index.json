@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-11-23T10:13:29Z",
+  "generated_at": "2026-11-25T05:15:20Z",
   "source": {
     "repository": "https://github.com/acowork/ACoworkAppGallery",
-    "commit": "a0d11625fc8da735fe711d56c31ea644470e8522"
+    "commit": "7c248e2a526dc68ede4f433744e1d45ca761679d"
   },
   "apps": [
     {
@@ -114,11 +114,11 @@
         "documents"
       ],
       "icon": "https://gallery.acowork.ai/apps/acowork/pdfcraft/assets/icon.png",
-      "latest_version": "0.21.4",
+      "latest_version": "0.21.5",
       "package": {
-        "url": "https://github.com/acowork/pdfcraft-app/releases/download/v0.21.4-acowork/pdfcraft-0.21.4-windows-x86_64.app.zip",
-        "sha256": "44d643b38c89fcb52872f160fca1210217bafb4e9669dbede89e01f9a6e99f43",
-        "size_bytes": 42797578,
+        "url": "https://github.com/acowork/pdfcraft-app/releases/download/v0.21.5-acowork/pdfcraft-0.21.5-windows-x86_64.app.zip",
+        "sha256": "704e65a074e90bee4b530063186e73d73488dac732657be342b572f8654c8e9b",
+        "size_bytes": 42797563,
         "platforms": [
           "windows-x86_64"
         ]
