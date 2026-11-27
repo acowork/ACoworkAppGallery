@@ -9,7 +9,7 @@ or binary `.app` packages. Each entry points at an external project
 panel can browse cards, render a README, and call
 `POST /api/apps/install-url` when a package is published.
 
-Sister project: [ACoworkAgentHub](https://github.com/acowork/ACoworkAgentHub)
+Sister project: [ACoworkBotHub](https://github.com/acowork/ACoworkBotHub)
 → [hub.acowork.ai](https://hub.acowork.ai). Apps and Bots stay separate
 surfaces in the Desktop.
 
