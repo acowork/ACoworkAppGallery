@@ -10,7 +10,7 @@ panel can browse cards, render a README, and call
 `POST /api/apps/install-url` when a package is published.
 
 Sister project: [ACoworkAgentHub](https://github.com/acowork/ACoworkAgentHub)
-→ [hub.acowork.ai](https://hub.acowork.ai). Apps and Agents stay separate
+→ [hub.acowork.ai](https://hub.acowork.ai). Apps and Bots stay separate
 surfaces in the Desktop.
 
 ## Layout

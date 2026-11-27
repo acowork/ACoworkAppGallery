@@ -45,7 +45,7 @@ python -m http.server 8787 --directory site
 
 ## Homepage link (acowork.ai)
 
-Add an App Gallery entry next to Agent Hub, for example:
+Add an App Gallery entry next to Bot Hub, for example:
 
 ```html
 <a href="https://gallery.acowork.ai">App Gallery</a>
